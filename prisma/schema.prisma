@@ -25,4 +25,37 @@ model User {
     phone   String @unique
 
     // avatarFileName String @unique @default("default.png")
+
+    clientOrders  Order[] @relation("ClientOrders")
+    courierOrders Order[] @relation("CourierOrders")
+}
+
+model Order {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    client   User @relation("ClientOrders", fields: [clientId], references: [id])
+    clientId Int  @map("client_id")
+
+    courier   User? @relation("CourierOrders", fields: [courierId], references: [id])
+    courierId Int?  @map("courier_id")
+
+    title       String
+    address     String
+    description String
+    price       Int
+
+    status      OrderStatus @default(PENDING)
+    deliveredAt DateTime?   @map("delivered_at")
+
+    @@map("orders")
+}
+
+enum OrderStatus {
+    PENDING
+    ACCEPTED
+    IN_PROGRESS
+    DELIVERED
+    CANCELLED
 }
