@@ -41,15 +41,37 @@ model Order {
     courier   User? @relation("CourierOrders", fields: [courierId], references: [id])
     courierId Int?  @map("courier_id")
 
-    title       String
-    address     String
-    description String
-    price       Int
+    // Адрес магазина (откуда забрать)
+    pickupAddress   String @map("pickup_address")
+    // Адрес доставки (куда привезти)
+    deliveryAddress String @map("delivery_address")
+
+    price   Int
+    comment String?
 
     status      OrderStatus @default(PENDING)
     deliveredAt DateTime?   @map("delivered_at")
 
+    items OrderItem[]
+
     @@map("orders")
+}
+
+model OrderItem {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    order   Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+    orderId Int   @map("order_id")
+
+    title    String
+    quantity String
+    note     String?
+
+    isPurchased Boolean @default(false) @map("is_purchased")
+
+    @@map("order_items")
 }
 
 enum OrderStatus {

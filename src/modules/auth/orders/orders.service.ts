@@ -1,11 +1,31 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOrderDto } from './dto/create-order.dto.js';
 import { UpdateOrderDto } from './dto/update-order.dto.js';
+import { PrismaService } from '../../../core/prisma/prisma.service.js';
 
 @Injectable()
 export class OrdersService {
-  create(createOrderDto: CreateOrderDto) {
-    return 'This action adds a new order';
+  constructor(private readonly prisma: PrismaService) {}
+
+  async create(clientId: number, dto: CreateOrderDto) {
+    const order = await this.prisma.order.create({
+      data: {
+        clientId,
+        pickupAddress: dto.pickupAddress,
+        deliveryAddress: dto.deliveryAddress,
+        comment: dto.comment,
+        price: dto.price,
+        items: {
+          create: dto.items.map((item) => ({
+            title: item.title,
+            quantity: item.quantity,
+            note: item.note,
+          })),
+        },
+      },
+      include: { items: true },
+    });
+    return order;
   }
 
   findAll() {
