@@ -9,7 +9,7 @@ export class PrismaService
   implements OnModuleInit, OnModuleDestroy
 {
   constructor(configService: ConfigService) {
-    const connectionString = process.env.POSTGRES_URL;
+    const connectionString = process.env.DATABASE_URL;
     // const caCert = process.env.SUPABASE_CERT;
 
     const adapter = new PrismaPg({

@@ -16,6 +16,7 @@ import { Authorized } from '../../../shared/decorators/authorized.decorator.js';
 import { type SafeUser } from '../../../shared/types/safeUser.js';
 import { CreateUserDto } from './dto/create-user.dto.js';
 import type { Request, Response } from 'express';
+import { LoginDto } from './dto/login.dto.js';
 
 @Controller('account')
 export class AccountController {
@@ -26,7 +27,7 @@ export class AccountController {
   @ApiOperation({ summary: 'Логин' })
   @ApiResponse({ status: 200, description: 'Авторизация прошла успешно' })
   async login(
-    @Body() dto: CreateUserDto,
+    @Body() dto: LoginDto,
     @Res({ passthrough: true }) res: Response,
   ) {
     const payload = await this.accountService.validateUser(dto);

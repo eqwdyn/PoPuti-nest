@@ -1,4 +1,3 @@
-// account.service.ts
 import {
   ConflictException,
   Injectable,
@@ -9,6 +8,7 @@ import { CreateUserDto } from './dto/create-user.dto.js';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../../../core/prisma/prisma.service.js';
+import { LoginDto } from './dto/login.dto.js';
 
 @Injectable()
 export class AccountService {
@@ -18,13 +18,12 @@ export class AccountService {
     private readonly prisma: PrismaService,
   ) {}
 
-  async validateUser(dto: CreateUserDto) {
+  async validateUser(dto: LoginDto) {
     const user = await this.prisma.user.findFirst({
       where: { login: dto.login },
     });
 
     if (!user) {
-      // Не раскрываем, что именно неверно (логин или пароль)
       throw new UnauthorizedException('Invalid login or password');
     }
 
@@ -42,7 +41,6 @@ export class AccountService {
     });
 
     if (candidate) {
-      // 409 Conflict — фронт может легко отловить это и показать под полем "Логин"
       throw new ConflictException('Login is already taken');
     }
 
