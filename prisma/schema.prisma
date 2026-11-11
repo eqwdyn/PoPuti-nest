@@ -26,6 +26,13 @@ model User {
 
     // avatarFileName String @unique @default("default.png")
 
+    courierRating      Float? @map("courier_rating")
+    courierRatingCount Int    @default(0) @map("courier_rating_count")
+
+    // Средний рейтинг клиента (0..5), null = ещё нет оценок
+    clientRating      Float? @map("client_rating")
+    clientRatingCount Int    @default(0) @map("client_rating_count")
+
     clientOrders  Order[] @relation("ClientOrders")
     courierOrders Order[] @relation("CourierOrders")
 }
@@ -42,9 +49,14 @@ model Order {
     courierId Int?  @map("courier_id")
 
     // Адрес магазина (откуда забрать)
-    pickupAddress   String @map("pickup_address")
+    pickupAddress String @map("pickup_address")
+    pickupLat     Float  @map("pickup_lat")
+    pickupLng     Float  @map("pickup_lng")
+
     // Адрес доставки (куда привезти)
     deliveryAddress String @map("delivery_address")
+    deliveryLat     Float  @map("delivery_lat")
+    deliveryLng     Float  @map("delivery_lng")
 
     price   Int
     comment String?
@@ -54,6 +66,8 @@ model Order {
 
     items OrderItem[]
 
+    @@index([pickupLat, pickupLng])
+    @@index([status, courierId])
     @@map("orders")
 }
 

@@ -688,7 +688,11 @@ export const UserScalarFieldEnum = {
   password: 'password',
   name: 'name',
   surname: 'surname',
-  phone: 'phone'
+  phone: 'phone',
+  courierRating: 'courierRating',
+  courierRatingCount: 'courierRatingCount',
+  clientRating: 'clientRating',
+  clientRatingCount: 'clientRatingCount'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -701,7 +705,11 @@ export const OrderScalarFieldEnum = {
   clientId: 'clientId',
   courierId: 'courierId',
   pickupAddress: 'pickupAddress',
+  pickupLat: 'pickupLat',
+  pickupLng: 'pickupLng',
   deliveryAddress: 'deliveryAddress',
+  deliveryLat: 'deliveryLat',
+  deliveryLng: 'deliveryLng',
   price: 'price',
   comment: 'comment',
   status: 'status',
@@ -798,6 +806,20 @@ export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaMod
 
 
 /**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+/**
+ * Reference to a field of type 'Float[]'
+ */
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+/**
  * Reference to a field of type 'OrderStatus'
  */
 export type EnumOrderStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OrderStatus'>
@@ -815,20 +837,6 @@ export type ListEnumOrderStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$
  * Reference to a field of type 'Boolean'
  */
 export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
-    
-
-
-/**
- * Reference to a field of type 'Float'
- */
-export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
-    
-
-
-/**
- * Reference to a field of type 'Float[]'
- */
-export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
 
 /**

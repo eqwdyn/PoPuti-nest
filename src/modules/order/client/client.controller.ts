@@ -9,7 +9,6 @@ import {
   HttpCode,
   HttpStatus,
   ParseIntPipe,
-  Query,
 } from '@nestjs/common';
 import { ClientService } from './client.service.js';
 import { CreateOrderDto } from './dto/create-order.dto.js';
@@ -25,8 +24,6 @@ export class ClientController {
 
   @Post()
   @Authorization()
-  @HttpCode(HttpStatus.CREATED)
-  @ApiOperation({ summary: 'Создание заказа' })
   @ApiResponse({ status: 201, description: 'Заказ создан' })
   create(@Authorized('id') userId: number, @Body() dto: CreateOrderDto) {
     return this.clientService.create(userId, dto);
@@ -36,7 +33,6 @@ export class ClientController {
   @Authorization()
   @ApiOperation({ summary: 'Список заказов текущего клиента' })
   findAll(@Authorized('id') userId: number) {
-    // ✅ фильтр по клиенту, а не все заказы
     return this.clientService.findAllByClient(userId);
   }
 

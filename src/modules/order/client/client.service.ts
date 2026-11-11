@@ -17,9 +17,16 @@ export class ClientService {
       data: {
         clientId,
         pickupAddress: dto.pickupAddress,
+        pickupLat: dto.pickupLat,
+        pickupLng: dto.pickupLng,
+
         deliveryAddress: dto.deliveryAddress,
+        deliveryLat: dto.deliveryLat,
+        deliveryLng: dto.deliveryLng,
+
         comment: dto.comment,
         price: dto.price,
+
         items: {
           create: dto.items.map((item) => ({
             title: item.title,

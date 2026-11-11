@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 // import { FILE_UPLOADS_DIR, FILE_UPLOADS_NAME } from '../shared/config.js';
 import { AccountModule } from '../modules/auth/account/account.module.js';
 import { ProfileModule } from '../modules/auth/profile/profile.module.js';
-import { OrdersModule } from '../modules/auth/orders/orders.module.js';
+import { OrderModule } from '../modules/order/order.module.js';
 
 @Module({
   imports: [
@@ -17,7 +17,7 @@ import { OrdersModule } from '../modules/auth/orders/orders.module.js';
     ConfigModule.forRoot({ isGlobal: true }),
     AccountModule,
     ProfileModule,
-    OrdersModule,
+    OrderModule,
   ],
 })
 export class CoreModule {}

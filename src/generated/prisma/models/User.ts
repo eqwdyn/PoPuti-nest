@@ -28,10 +28,18 @@ export type AggregateUser = {
 
 export type UserAvgAggregateOutputType = {
   id: number | null
+  courierRating: number | null
+  courierRatingCount: number | null
+  clientRating: number | null
+  clientRatingCount: number | null
 }
 
 export type UserSumAggregateOutputType = {
   id: number | null
+  courierRating: number | null
+  courierRatingCount: number | null
+  clientRating: number | null
+  clientRatingCount: number | null
 }
 
 export type UserMinAggregateOutputType = {
@@ -43,6 +51,10 @@ export type UserMinAggregateOutputType = {
   name: string | null
   surname: string | null
   phone: string | null
+  courierRating: number | null
+  courierRatingCount: number | null
+  clientRating: number | null
+  clientRatingCount: number | null
 }
 
 export type UserMaxAggregateOutputType = {
@@ -54,6 +66,10 @@ export type UserMaxAggregateOutputType = {
   name: string | null
   surname: string | null
   phone: string | null
+  courierRating: number | null
+  courierRatingCount: number | null
+  clientRating: number | null
+  clientRatingCount: number | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -65,16 +81,28 @@ export type UserCountAggregateOutputType = {
   name: number
   surname: number
   phone: number
+  courierRating: number
+  courierRatingCount: number
+  clientRating: number
+  clientRatingCount: number
   _all: number
 }
 
 
 export type UserAvgAggregateInputType = {
   id?: true
+  courierRating?: true
+  courierRatingCount?: true
+  clientRating?: true
+  clientRatingCount?: true
 }
 
 export type UserSumAggregateInputType = {
   id?: true
+  courierRating?: true
+  courierRatingCount?: true
+  clientRating?: true
+  clientRatingCount?: true
 }
 
 export type UserMinAggregateInputType = {
@@ -86,6 +114,10 @@ export type UserMinAggregateInputType = {
   name?: true
   surname?: true
   phone?: true
+  courierRating?: true
+  courierRatingCount?: true
+  clientRating?: true
+  clientRatingCount?: true
 }
 
 export type UserMaxAggregateInputType = {
@@ -97,6 +129,10 @@ export type UserMaxAggregateInputType = {
   name?: true
   surname?: true
   phone?: true
+  courierRating?: true
+  courierRatingCount?: true
+  clientRating?: true
+  clientRatingCount?: true
 }
 
 export type UserCountAggregateInputType = {
@@ -108,6 +144,10 @@ export type UserCountAggregateInputType = {
   name?: true
   surname?: true
   phone?: true
+  courierRating?: true
+  courierRatingCount?: true
+  clientRating?: true
+  clientRatingCount?: true
   _all?: true
 }
 
@@ -206,6 +246,10 @@ export type UserGroupByOutputType = {
   name: string
   surname: string
   phone: string
+  courierRating: number | null
+  courierRatingCount: number
+  clientRating: number | null
+  clientRatingCount: number
   _count: UserCountAggregateOutputType | null
   _avg: UserAvgAggregateOutputType | null
   _sum: UserSumAggregateOutputType | null
@@ -240,6 +284,10 @@ export type UserWhereInput = {
   name?: Prisma.StringFilter<"User"> | string
   surname?: Prisma.StringFilter<"User"> | string
   phone?: Prisma.StringFilter<"User"> | string
+  courierRating?: Prisma.FloatNullableFilter<"User"> | number | null
+  courierRatingCount?: Prisma.IntFilter<"User"> | number
+  clientRating?: Prisma.FloatNullableFilter<"User"> | number | null
+  clientRatingCount?: Prisma.IntFilter<"User"> | number
   clientOrders?: Prisma.OrderListRelationFilter
   courierOrders?: Prisma.OrderListRelationFilter
 }
@@ -253,6 +301,10 @@ export type UserOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   surname?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  courierRating?: Prisma.SortOrderInput | Prisma.SortOrder
+  courierRatingCount?: Prisma.SortOrder
+  clientRating?: Prisma.SortOrderInput | Prisma.SortOrder
+  clientRatingCount?: Prisma.SortOrder
   clientOrders?: Prisma.OrderOrderByRelationAggregateInput
   courierOrders?: Prisma.OrderOrderByRelationAggregateInput
 }
@@ -269,6 +321,10 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   password?: Prisma.StringFilter<"User"> | string
   name?: Prisma.StringFilter<"User"> | string
   surname?: Prisma.StringFilter<"User"> | string
+  courierRating?: Prisma.FloatNullableFilter<"User"> | number | null
+  courierRatingCount?: Prisma.IntFilter<"User"> | number
+  clientRating?: Prisma.FloatNullableFilter<"User"> | number | null
+  clientRatingCount?: Prisma.IntFilter<"User"> | number
   clientOrders?: Prisma.OrderListRelationFilter
   courierOrders?: Prisma.OrderListRelationFilter
 }, "id" | "login" | "phone">
@@ -282,6 +338,10 @@ export type UserOrderByWithAggregationInput = {
   name?: Prisma.SortOrder
   surname?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  courierRating?: Prisma.SortOrderInput | Prisma.SortOrder
+  courierRatingCount?: Prisma.SortOrder
+  clientRating?: Prisma.SortOrderInput | Prisma.SortOrder
+  clientRatingCount?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _avg?: Prisma.UserAvgOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
@@ -301,6 +361,10 @@ export type UserScalarWhereWithAggregatesInput = {
   name?: Prisma.StringWithAggregatesFilter<"User"> | string
   surname?: Prisma.StringWithAggregatesFilter<"User"> | string
   phone?: Prisma.StringWithAggregatesFilter<"User"> | string
+  courierRating?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
+  courierRatingCount?: Prisma.IntWithAggregatesFilter<"User"> | number
+  clientRating?: Prisma.FloatNullableWithAggregatesFilter<"User"> | number | null
+  clientRatingCount?: Prisma.IntWithAggregatesFilter<"User"> | number
 }
 
 export type UserCreateInput = {
@@ -311,6 +375,10 @@ export type UserCreateInput = {
   name: string
   surname: string
   phone: string
+  courierRating?: number | null
+  courierRatingCount?: number
+  clientRating?: number | null
+  clientRatingCount?: number
   clientOrders?: Prisma.OrderCreateNestedManyWithoutClientInput
   courierOrders?: Prisma.OrderCreateNestedManyWithoutCourierInput
 }
@@ -324,6 +392,10 @@ export type UserUncheckedCreateInput = {
   name: string
   surname: string
   phone: string
+  courierRating?: number | null
+  courierRatingCount?: number
+  clientRating?: number | null
+  clientRatingCount?: number
   clientOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutClientInput
   courierOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourierInput
 }
@@ -336,6 +408,10 @@ export type UserUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   surname?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
+  courierRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  courierRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  clientRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  clientRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
   clientOrders?: Prisma.OrderUpdateManyWithoutClientNestedInput
   courierOrders?: Prisma.OrderUpdateManyWithoutCourierNestedInput
 }
@@ -349,6 +425,10 @@ export type UserUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   surname?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
+  courierRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  courierRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  clientRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  clientRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
   clientOrders?: Prisma.OrderUncheckedUpdateManyWithoutClientNestedInput
   courierOrders?: Prisma.OrderUncheckedUpdateManyWithoutCourierNestedInput
 }
@@ -362,6 +442,10 @@ export type UserCreateManyInput = {
   name: string
   surname: string
   phone: string
+  courierRating?: number | null
+  courierRatingCount?: number
+  clientRating?: number | null
+  clientRatingCount?: number
 }
 
 export type UserUpdateManyMutationInput = {
@@ -372,6 +456,10 @@ export type UserUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   surname?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
+  courierRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  courierRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  clientRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  clientRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type UserUncheckedUpdateManyInput = {
@@ -383,6 +471,10 @@ export type UserUncheckedUpdateManyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   surname?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
+  courierRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  courierRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  clientRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  clientRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type UserCountOrderByAggregateInput = {
@@ -394,10 +486,18 @@ export type UserCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   surname?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  courierRating?: Prisma.SortOrder
+  courierRatingCount?: Prisma.SortOrder
+  clientRating?: Prisma.SortOrder
+  clientRatingCount?: Prisma.SortOrder
 }
 
 export type UserAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  courierRating?: Prisma.SortOrder
+  courierRatingCount?: Prisma.SortOrder
+  clientRating?: Prisma.SortOrder
+  clientRatingCount?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
@@ -409,6 +509,10 @@ export type UserMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   surname?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  courierRating?: Prisma.SortOrder
+  courierRatingCount?: Prisma.SortOrder
+  clientRating?: Prisma.SortOrder
+  clientRatingCount?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
@@ -420,10 +524,18 @@ export type UserMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   surname?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  courierRating?: Prisma.SortOrder
+  courierRatingCount?: Prisma.SortOrder
+  clientRating?: Prisma.SortOrder
+  clientRatingCount?: Prisma.SortOrder
 }
 
 export type UserSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  courierRating?: Prisma.SortOrder
+  courierRatingCount?: Prisma.SortOrder
+  clientRating?: Prisma.SortOrder
+  clientRatingCount?: Prisma.SortOrder
 }
 
 export type UserScalarRelationFilter = {
@@ -442,6 +554,14 @@ export type DateTimeFieldUpdateOperationsInput = {
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type NullableFloatFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -490,6 +610,10 @@ export type UserCreateWithoutClientOrdersInput = {
   name: string
   surname: string
   phone: string
+  courierRating?: number | null
+  courierRatingCount?: number
+  clientRating?: number | null
+  clientRatingCount?: number
   courierOrders?: Prisma.OrderCreateNestedManyWithoutCourierInput
 }
 
@@ -502,6 +626,10 @@ export type UserUncheckedCreateWithoutClientOrdersInput = {
   name: string
   surname: string
   phone: string
+  courierRating?: number | null
+  courierRatingCount?: number
+  clientRating?: number | null
+  clientRatingCount?: number
   courierOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutCourierInput
 }
 
@@ -518,6 +646,10 @@ export type UserCreateWithoutCourierOrdersInput = {
   name: string
   surname: string
   phone: string
+  courierRating?: number | null
+  courierRatingCount?: number
+  clientRating?: number | null
+  clientRatingCount?: number
   clientOrders?: Prisma.OrderCreateNestedManyWithoutClientInput
 }
 
@@ -530,6 +662,10 @@ export type UserUncheckedCreateWithoutCourierOrdersInput = {
   name: string
   surname: string
   phone: string
+  courierRating?: number | null
+  courierRatingCount?: number
+  clientRating?: number | null
+  clientRatingCount?: number
   clientOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutClientInput
 }
 
@@ -557,6 +693,10 @@ export type UserUpdateWithoutClientOrdersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   surname?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
+  courierRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  courierRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  clientRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  clientRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
   courierOrders?: Prisma.OrderUpdateManyWithoutCourierNestedInput
 }
 
@@ -569,6 +709,10 @@ export type UserUncheckedUpdateWithoutClientOrdersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   surname?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
+  courierRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  courierRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  clientRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  clientRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
   courierOrders?: Prisma.OrderUncheckedUpdateManyWithoutCourierNestedInput
 }
 
@@ -591,6 +735,10 @@ export type UserUpdateWithoutCourierOrdersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   surname?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
+  courierRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  courierRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  clientRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  clientRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
   clientOrders?: Prisma.OrderUpdateManyWithoutClientNestedInput
 }
 
@@ -603,6 +751,10 @@ export type UserUncheckedUpdateWithoutCourierOrdersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   surname?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.StringFieldUpdateOperationsInput | string
+  courierRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  courierRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  clientRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  clientRatingCount?: Prisma.IntFieldUpdateOperationsInput | number
   clientOrders?: Prisma.OrderUncheckedUpdateManyWithoutClientNestedInput
 }
 
@@ -655,6 +807,10 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   name?: boolean
   surname?: boolean
   phone?: boolean
+  courierRating?: boolean
+  courierRatingCount?: boolean
+  clientRating?: boolean
+  clientRatingCount?: boolean
   clientOrders?: boolean | Prisma.User$clientOrdersArgs<ExtArgs>
   courierOrders?: boolean | Prisma.User$courierOrdersArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -669,6 +825,10 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   name?: boolean
   surname?: boolean
   phone?: boolean
+  courierRating?: boolean
+  courierRatingCount?: boolean
+  clientRating?: boolean
+  clientRatingCount?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -680,6 +840,10 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   name?: boolean
   surname?: boolean
   phone?: boolean
+  courierRating?: boolean
+  courierRatingCount?: boolean
+  clientRating?: boolean
+  clientRatingCount?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
@@ -691,9 +855,13 @@ export type UserSelectScalar = {
   name?: boolean
   surname?: boolean
   phone?: boolean
+  courierRating?: boolean
+  courierRatingCount?: boolean
+  clientRating?: boolean
+  clientRatingCount?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "login" | "password" | "name" | "surname" | "phone", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "login" | "password" | "name" | "surname" | "phone" | "courierRating" | "courierRatingCount" | "clientRating" | "clientRatingCount", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   clientOrders?: boolean | Prisma.User$clientOrdersArgs<ExtArgs>
   courierOrders?: boolean | Prisma.User$courierOrdersArgs<ExtArgs>
@@ -717,6 +885,10 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     name: string
     surname: string
     phone: string
+    courierRating: number | null
+    courierRatingCount: number
+    clientRating: number | null
+    clientRatingCount: number
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -1150,6 +1322,10 @@ export interface UserFieldRefs {
   readonly name: Prisma.FieldRef<"User", 'String'>
   readonly surname: Prisma.FieldRef<"User", 'String'>
   readonly phone: Prisma.FieldRef<"User", 'String'>
+  readonly courierRating: Prisma.FieldRef<"User", 'Float'>
+  readonly courierRatingCount: Prisma.FieldRef<"User", 'Int'>
+  readonly clientRating: Prisma.FieldRef<"User", 'Float'>
+  readonly clientRatingCount: Prisma.FieldRef<"User", 'Int'>
 }
     
 

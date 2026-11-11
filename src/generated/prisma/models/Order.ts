@@ -30,6 +30,10 @@ export type OrderAvgAggregateOutputType = {
   id: number | null
   clientId: number | null
   courierId: number | null
+  pickupLat: number | null
+  pickupLng: number | null
+  deliveryLat: number | null
+  deliveryLng: number | null
   price: number | null
 }
 
@@ -37,6 +41,10 @@ export type OrderSumAggregateOutputType = {
   id: number | null
   clientId: number | null
   courierId: number | null
+  pickupLat: number | null
+  pickupLng: number | null
+  deliveryLat: number | null
+  deliveryLng: number | null
   price: number | null
 }
 
@@ -47,7 +55,11 @@ export type OrderMinAggregateOutputType = {
   clientId: number | null
   courierId: number | null
   pickupAddress: string | null
+  pickupLat: number | null
+  pickupLng: number | null
   deliveryAddress: string | null
+  deliveryLat: number | null
+  deliveryLng: number | null
   price: number | null
   comment: string | null
   status: $Enums.OrderStatus | null
@@ -61,7 +73,11 @@ export type OrderMaxAggregateOutputType = {
   clientId: number | null
   courierId: number | null
   pickupAddress: string | null
+  pickupLat: number | null
+  pickupLng: number | null
   deliveryAddress: string | null
+  deliveryLat: number | null
+  deliveryLng: number | null
   price: number | null
   comment: string | null
   status: $Enums.OrderStatus | null
@@ -75,7 +91,11 @@ export type OrderCountAggregateOutputType = {
   clientId: number
   courierId: number
   pickupAddress: number
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: number
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment: number
   status: number
@@ -88,6 +108,10 @@ export type OrderAvgAggregateInputType = {
   id?: true
   clientId?: true
   courierId?: true
+  pickupLat?: true
+  pickupLng?: true
+  deliveryLat?: true
+  deliveryLng?: true
   price?: true
 }
 
@@ -95,6 +119,10 @@ export type OrderSumAggregateInputType = {
   id?: true
   clientId?: true
   courierId?: true
+  pickupLat?: true
+  pickupLng?: true
+  deliveryLat?: true
+  deliveryLng?: true
   price?: true
 }
 
@@ -105,7 +133,11 @@ export type OrderMinAggregateInputType = {
   clientId?: true
   courierId?: true
   pickupAddress?: true
+  pickupLat?: true
+  pickupLng?: true
   deliveryAddress?: true
+  deliveryLat?: true
+  deliveryLng?: true
   price?: true
   comment?: true
   status?: true
@@ -119,7 +151,11 @@ export type OrderMaxAggregateInputType = {
   clientId?: true
   courierId?: true
   pickupAddress?: true
+  pickupLat?: true
+  pickupLng?: true
   deliveryAddress?: true
+  deliveryLat?: true
+  deliveryLng?: true
   price?: true
   comment?: true
   status?: true
@@ -133,7 +169,11 @@ export type OrderCountAggregateInputType = {
   clientId?: true
   courierId?: true
   pickupAddress?: true
+  pickupLat?: true
+  pickupLng?: true
   deliveryAddress?: true
+  deliveryLat?: true
+  deliveryLng?: true
   price?: true
   comment?: true
   status?: true
@@ -234,7 +274,11 @@ export type OrderGroupByOutputType = {
   clientId: number
   courierId: number | null
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment: string | null
   status: $Enums.OrderStatus
@@ -271,7 +315,11 @@ export type OrderWhereInput = {
   clientId?: Prisma.IntFilter<"Order"> | number
   courierId?: Prisma.IntNullableFilter<"Order"> | number | null
   pickupAddress?: Prisma.StringFilter<"Order"> | string
+  pickupLat?: Prisma.FloatFilter<"Order"> | number
+  pickupLng?: Prisma.FloatFilter<"Order"> | number
   deliveryAddress?: Prisma.StringFilter<"Order"> | string
+  deliveryLat?: Prisma.FloatFilter<"Order"> | number
+  deliveryLng?: Prisma.FloatFilter<"Order"> | number
   price?: Prisma.IntFilter<"Order"> | number
   comment?: Prisma.StringNullableFilter<"Order"> | string | null
   status?: Prisma.EnumOrderStatusFilter<"Order"> | $Enums.OrderStatus
@@ -288,7 +336,11 @@ export type OrderOrderByWithRelationInput = {
   clientId?: Prisma.SortOrder
   courierId?: Prisma.SortOrderInput | Prisma.SortOrder
   pickupAddress?: Prisma.SortOrder
+  pickupLat?: Prisma.SortOrder
+  pickupLng?: Prisma.SortOrder
   deliveryAddress?: Prisma.SortOrder
+  deliveryLat?: Prisma.SortOrder
+  deliveryLng?: Prisma.SortOrder
   price?: Prisma.SortOrder
   comment?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -308,7 +360,11 @@ export type OrderWhereUniqueInput = Prisma.AtLeast<{
   clientId?: Prisma.IntFilter<"Order"> | number
   courierId?: Prisma.IntNullableFilter<"Order"> | number | null
   pickupAddress?: Prisma.StringFilter<"Order"> | string
+  pickupLat?: Prisma.FloatFilter<"Order"> | number
+  pickupLng?: Prisma.FloatFilter<"Order"> | number
   deliveryAddress?: Prisma.StringFilter<"Order"> | string
+  deliveryLat?: Prisma.FloatFilter<"Order"> | number
+  deliveryLng?: Prisma.FloatFilter<"Order"> | number
   price?: Prisma.IntFilter<"Order"> | number
   comment?: Prisma.StringNullableFilter<"Order"> | string | null
   status?: Prisma.EnumOrderStatusFilter<"Order"> | $Enums.OrderStatus
@@ -325,7 +381,11 @@ export type OrderOrderByWithAggregationInput = {
   clientId?: Prisma.SortOrder
   courierId?: Prisma.SortOrderInput | Prisma.SortOrder
   pickupAddress?: Prisma.SortOrder
+  pickupLat?: Prisma.SortOrder
+  pickupLng?: Prisma.SortOrder
   deliveryAddress?: Prisma.SortOrder
+  deliveryLat?: Prisma.SortOrder
+  deliveryLng?: Prisma.SortOrder
   price?: Prisma.SortOrder
   comment?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -347,7 +407,11 @@ export type OrderScalarWhereWithAggregatesInput = {
   clientId?: Prisma.IntWithAggregatesFilter<"Order"> | number
   courierId?: Prisma.IntNullableWithAggregatesFilter<"Order"> | number | null
   pickupAddress?: Prisma.StringWithAggregatesFilter<"Order"> | string
+  pickupLat?: Prisma.FloatWithAggregatesFilter<"Order"> | number
+  pickupLng?: Prisma.FloatWithAggregatesFilter<"Order"> | number
   deliveryAddress?: Prisma.StringWithAggregatesFilter<"Order"> | string
+  deliveryLat?: Prisma.FloatWithAggregatesFilter<"Order"> | number
+  deliveryLng?: Prisma.FloatWithAggregatesFilter<"Order"> | number
   price?: Prisma.IntWithAggregatesFilter<"Order"> | number
   comment?: Prisma.StringNullableWithAggregatesFilter<"Order"> | string | null
   status?: Prisma.EnumOrderStatusWithAggregatesFilter<"Order"> | $Enums.OrderStatus
@@ -358,7 +422,11 @@ export type OrderCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -375,7 +443,11 @@ export type OrderUncheckedCreateInput = {
   clientId: number
   courierId?: number | null
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -387,7 +459,11 @@ export type OrderUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -404,7 +480,11 @@ export type OrderUncheckedUpdateInput = {
   clientId?: Prisma.IntFieldUpdateOperationsInput | number
   courierId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -419,7 +499,11 @@ export type OrderCreateManyInput = {
   clientId: number
   courierId?: number | null
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -430,7 +514,11 @@ export type OrderUpdateManyMutationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -444,7 +532,11 @@ export type OrderUncheckedUpdateManyInput = {
   clientId?: Prisma.IntFieldUpdateOperationsInput | number
   courierId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -468,7 +560,11 @@ export type OrderCountOrderByAggregateInput = {
   clientId?: Prisma.SortOrder
   courierId?: Prisma.SortOrder
   pickupAddress?: Prisma.SortOrder
+  pickupLat?: Prisma.SortOrder
+  pickupLng?: Prisma.SortOrder
   deliveryAddress?: Prisma.SortOrder
+  deliveryLat?: Prisma.SortOrder
+  deliveryLng?: Prisma.SortOrder
   price?: Prisma.SortOrder
   comment?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -479,6 +575,10 @@ export type OrderAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   clientId?: Prisma.SortOrder
   courierId?: Prisma.SortOrder
+  pickupLat?: Prisma.SortOrder
+  pickupLng?: Prisma.SortOrder
+  deliveryLat?: Prisma.SortOrder
+  deliveryLng?: Prisma.SortOrder
   price?: Prisma.SortOrder
 }
 
@@ -489,7 +589,11 @@ export type OrderMaxOrderByAggregateInput = {
   clientId?: Prisma.SortOrder
   courierId?: Prisma.SortOrder
   pickupAddress?: Prisma.SortOrder
+  pickupLat?: Prisma.SortOrder
+  pickupLng?: Prisma.SortOrder
   deliveryAddress?: Prisma.SortOrder
+  deliveryLat?: Prisma.SortOrder
+  deliveryLng?: Prisma.SortOrder
   price?: Prisma.SortOrder
   comment?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -503,7 +607,11 @@ export type OrderMinOrderByAggregateInput = {
   clientId?: Prisma.SortOrder
   courierId?: Prisma.SortOrder
   pickupAddress?: Prisma.SortOrder
+  pickupLat?: Prisma.SortOrder
+  pickupLng?: Prisma.SortOrder
   deliveryAddress?: Prisma.SortOrder
+  deliveryLat?: Prisma.SortOrder
+  deliveryLng?: Prisma.SortOrder
   price?: Prisma.SortOrder
   comment?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -514,6 +622,10 @@ export type OrderSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   clientId?: Prisma.SortOrder
   courierId?: Prisma.SortOrder
+  pickupLat?: Prisma.SortOrder
+  pickupLng?: Prisma.SortOrder
+  deliveryLat?: Prisma.SortOrder
+  deliveryLng?: Prisma.SortOrder
   price?: Prisma.SortOrder
 }
 
@@ -606,6 +718,14 @@ export type OrderUncheckedUpdateManyWithoutCourierNestedInput = {
   deleteMany?: Prisma.OrderScalarWhereInput | Prisma.OrderScalarWhereInput[]
 }
 
+export type FloatFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
 }
@@ -644,7 +764,11 @@ export type OrderCreateWithoutClientInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -659,7 +783,11 @@ export type OrderUncheckedCreateWithoutClientInput = {
   updatedAt?: Date | string
   courierId?: number | null
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -681,7 +809,11 @@ export type OrderCreateWithoutCourierInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -696,7 +828,11 @@ export type OrderUncheckedCreateWithoutCourierInput = {
   updatedAt?: Date | string
   clientId: number
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -740,7 +876,11 @@ export type OrderScalarWhereInput = {
   clientId?: Prisma.IntFilter<"Order"> | number
   courierId?: Prisma.IntNullableFilter<"Order"> | number | null
   pickupAddress?: Prisma.StringFilter<"Order"> | string
+  pickupLat?: Prisma.FloatFilter<"Order"> | number
+  pickupLng?: Prisma.FloatFilter<"Order"> | number
   deliveryAddress?: Prisma.StringFilter<"Order"> | string
+  deliveryLat?: Prisma.FloatFilter<"Order"> | number
+  deliveryLng?: Prisma.FloatFilter<"Order"> | number
   price?: Prisma.IntFilter<"Order"> | number
   comment?: Prisma.StringNullableFilter<"Order"> | string | null
   status?: Prisma.EnumOrderStatusFilter<"Order"> | $Enums.OrderStatus
@@ -767,7 +907,11 @@ export type OrderCreateWithoutItemsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -783,7 +927,11 @@ export type OrderUncheckedCreateWithoutItemsInput = {
   clientId: number
   courierId?: number | null
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -810,7 +958,11 @@ export type OrderUpdateWithoutItemsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -826,7 +978,11 @@ export type OrderUncheckedUpdateWithoutItemsInput = {
   clientId?: Prisma.IntFieldUpdateOperationsInput | number
   courierId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -839,7 +995,11 @@ export type OrderCreateManyClientInput = {
   updatedAt?: Date | string
   courierId?: number | null
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -852,7 +1012,11 @@ export type OrderCreateManyCourierInput = {
   updatedAt?: Date | string
   clientId: number
   pickupAddress: string
+  pickupLat: number
+  pickupLng: number
   deliveryAddress: string
+  deliveryLat: number
+  deliveryLng: number
   price: number
   comment?: string | null
   status?: $Enums.OrderStatus
@@ -863,7 +1027,11 @@ export type OrderUpdateWithoutClientInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -878,7 +1046,11 @@ export type OrderUncheckedUpdateWithoutClientInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   courierId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -892,7 +1064,11 @@ export type OrderUncheckedUpdateManyWithoutClientInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   courierId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -903,7 +1079,11 @@ export type OrderUpdateWithoutCourierInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -918,7 +1098,11 @@ export type OrderUncheckedUpdateWithoutCourierInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clientId?: Prisma.IntFieldUpdateOperationsInput | number
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -932,7 +1116,11 @@ export type OrderUncheckedUpdateManyWithoutCourierInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clientId?: Prisma.IntFieldUpdateOperationsInput | number
   pickupAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  pickupLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  pickupLng?: Prisma.FloatFieldUpdateOperationsInput | number
   deliveryAddress?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryLat?: Prisma.FloatFieldUpdateOperationsInput | number
+  deliveryLng?: Prisma.FloatFieldUpdateOperationsInput | number
   price?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus
@@ -977,7 +1165,11 @@ export type OrderSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   clientId?: boolean
   courierId?: boolean
   pickupAddress?: boolean
+  pickupLat?: boolean
+  pickupLng?: boolean
   deliveryAddress?: boolean
+  deliveryLat?: boolean
+  deliveryLng?: boolean
   price?: boolean
   comment?: boolean
   status?: boolean
@@ -995,7 +1187,11 @@ export type OrderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   clientId?: boolean
   courierId?: boolean
   pickupAddress?: boolean
+  pickupLat?: boolean
+  pickupLng?: boolean
   deliveryAddress?: boolean
+  deliveryLat?: boolean
+  deliveryLng?: boolean
   price?: boolean
   comment?: boolean
   status?: boolean
@@ -1011,7 +1207,11 @@ export type OrderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   clientId?: boolean
   courierId?: boolean
   pickupAddress?: boolean
+  pickupLat?: boolean
+  pickupLng?: boolean
   deliveryAddress?: boolean
+  deliveryLat?: boolean
+  deliveryLng?: boolean
   price?: boolean
   comment?: boolean
   status?: boolean
@@ -1027,14 +1227,18 @@ export type OrderSelectScalar = {
   clientId?: boolean
   courierId?: boolean
   pickupAddress?: boolean
+  pickupLat?: boolean
+  pickupLng?: boolean
   deliveryAddress?: boolean
+  deliveryLat?: boolean
+  deliveryLng?: boolean
   price?: boolean
   comment?: boolean
   status?: boolean
   deliveredAt?: boolean
 }
 
-export type OrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "clientId" | "courierId" | "pickupAddress" | "deliveryAddress" | "price" | "comment" | "status" | "deliveredAt", ExtArgs["result"]["order"]>
+export type OrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "clientId" | "courierId" | "pickupAddress" | "pickupLat" | "pickupLng" | "deliveryAddress" | "deliveryLat" | "deliveryLng" | "price" | "comment" | "status" | "deliveredAt", ExtArgs["result"]["order"]>
 export type OrderInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   client?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   courier?: boolean | Prisma.Order$courierArgs<ExtArgs>
@@ -1064,7 +1268,11 @@ export type $OrderPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     clientId: number
     courierId: number | null
     pickupAddress: string
+    pickupLat: number
+    pickupLng: number
     deliveryAddress: string
+    deliveryLat: number
+    deliveryLng: number
     price: number
     comment: string | null
     status: $Enums.OrderStatus
@@ -1501,7 +1709,11 @@ export interface OrderFieldRefs {
   readonly clientId: Prisma.FieldRef<"Order", 'Int'>
   readonly courierId: Prisma.FieldRef<"Order", 'Int'>
   readonly pickupAddress: Prisma.FieldRef<"Order", 'String'>
+  readonly pickupLat: Prisma.FieldRef<"Order", 'Float'>
+  readonly pickupLng: Prisma.FieldRef<"Order", 'Float'>
   readonly deliveryAddress: Prisma.FieldRef<"Order", 'String'>
+  readonly deliveryLat: Prisma.FieldRef<"Order", 'Float'>
+  readonly deliveryLng: Prisma.FieldRef<"Order", 'Float'>
   readonly price: Prisma.FieldRef<"Order", 'Int'>
   readonly comment: Prisma.FieldRef<"Order", 'String'>
   readonly status: Prisma.FieldRef<"Order", 'OrderStatus'>
