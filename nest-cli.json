@@ -6,15 +6,5 @@
     "deleteOutDir": true,
     "builder": "rspack"
   },
-  "projects": {
-    "asd": {
-      "type": "library",
-      "root": "libs/asd",
-      "entryFile": "index",
-      "sourceRoot": "libs/asd/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/asd/tsconfig.lib.json"
-      }
-    }
-  }
+  "projects": {}
 }
